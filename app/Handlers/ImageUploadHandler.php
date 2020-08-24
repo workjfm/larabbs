@@ -2,7 +2,7 @@
 
 namespace App\Handlers;
 
-use Image;
+use Intervention\Image\ImageManagerStatic;
 use Str;
 
 class ImageUploadHandler
@@ -49,7 +49,7 @@ class ImageUploadHandler
     public function reduceSize($file_path, $max_width)
     {
         // 先实例化，传参是文件的磁盘物理路径
-        $image = Image::make($file_path);
+        $image = ImageManagerStatic::make($file_path);
 
         // 进行大小调整的操作
         $image->resize($max_width, null, function ($constraint) {
