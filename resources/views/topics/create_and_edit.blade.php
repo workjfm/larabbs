@@ -19,11 +19,11 @@
           <hr>
 
           @if($topic->id)
-            <form action="{{ route('topics.update', $topic->id) }}" method="POST" accept-charset="UTF-8">
-                <input type="hidden" name="_method" value="PUT">
-              @else
-                <form action="{{ route('topics.store') }}" method="POST" accept-charset="UTF-8">
-                  @endif
+          <form action="{{ route('topics.update', $topic->id) }}" method="POST" accept-charset="UTF-8">
+              <input type="hidden" name="_method" value="PUT">
+          @else
+          <form action="{{ route('topics.store') }}" method="POST" accept-charset="UTF-8">
+          @endif
 
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -51,7 +51,7 @@
                   <div class="well well-sm">
                     <button type="submit" class="btn btn-primary"><i class="far fa-save mr-2" aria-hidden="true"></i> 保存</button>
                   </div>
-                </form>
+          </form>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
         textarea: $('#editor'),
         upload: {
           url: '{{ route('topics.upload_image') }}',
-          param: {
+          params: {
             _token: '{{ csrf_token() }}'
           },
           fileKey: 'upload_file',
