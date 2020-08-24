@@ -75,7 +75,7 @@
         textarea: $('#editor'),
         upload: {
           url: '{{ route('topics.upload_image') }}',
-          params: {
+          param: {
             _token: '{{ csrf_token() }}'
           },
           fileKey: 'upload_file',
