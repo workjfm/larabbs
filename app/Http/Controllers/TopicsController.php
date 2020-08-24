@@ -6,7 +6,6 @@ use App\Handlers\ImageUploadHandler;
 use App\Models\Category;
 use App\Models\Topic;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\TopicRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -79,7 +78,7 @@ class TopicsController extends Controller
         // 判断是否有上传文件，并赋值给 $file
         if ($file = $request->upload_file) {
             // 保存图片到本地
-            $result = $uploader->save($file, 'topics', \Auth::id(), 1024);
+            $result = $uploader->save($file, 'topics', Auth::id(), 1024);
             // 图片保存成功的话
             if ($result) {
                 $data['file_path'] = $result['path'];

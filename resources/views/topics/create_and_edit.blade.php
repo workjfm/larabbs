@@ -20,7 +20,7 @@
 
           @if($topic->id)
             <form action="{{ route('topics.update', $topic->id) }}" method="POST" accept-charset="UTF-8">
-              <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_method" value="PUT">
               @else
                 <form action="{{ route('topics.store') }}" method="POST" accept-charset="UTF-8">
                   @endif
