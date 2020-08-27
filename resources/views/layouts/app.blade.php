@@ -13,6 +13,8 @@
   <meta name="description" content="@yield('description', setting('seo_description', 'Jfmbbs 爱好者社区。'))" />
   <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'JfmBBS,社区,论坛,开发者论坛'))" />
 
+  <link rel="icon" href="/icon.ico">
+
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
