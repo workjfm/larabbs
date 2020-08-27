@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Jobs\TranslateSlug;
+use App\Models\Reply;
 use App\Models\Topic;
 use App\Handlers\SlugTranslateHandler;
 
@@ -29,5 +30,10 @@ class TopicObserver
             // 推送任务到队列
             dispatch(new TranslateSlug($topic));
         }
+    }
+
+    public function deleted(Topic $topic)
+    {
+        \DB::table('replies')->where('topic_id', $topic->id)->delete();
     }
 }
