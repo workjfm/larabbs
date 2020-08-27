@@ -18,7 +18,7 @@ trait ActiveUserHelper
     protected $topic_weight = 4; // 话题权重
     protected $reply_weight = 1; // 回复权重
     protected $pass_days = 7;    // 多少天内发表过内容
-    protected $user_number = 8; // 取出来多少用户
+    protected $user_number = 6; // 取出来多少用户
 
     // 缓存相关配置
     protected $cache_key = 'larabbs_active_users';
