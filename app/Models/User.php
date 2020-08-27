@@ -11,6 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmailContract
 {
+    use Traits\LastActivedAtHelper;
     use Traits\ActiveUserHelper;
     use HasRoles;
     use MustVerifyEmailTrait;
@@ -34,7 +35,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
     }
 
     protected $fillable = [
-        'name', 'email', 'password', 'introduction', 'avatar'
+        'name', 'email', 'password', 'introduction', 'avatar', 'last_actived_at'
     ];
 
     protected $hidden = [
